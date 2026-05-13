@@ -31,9 +31,7 @@ async function bootstrap() {
     // Use cookie parser
     app.use(cookieParser());
 
-    const port = process.env.PORT || 3000;
-    await app.listen(port, '0.0.0.0');
-    console.log(`Server running on port ${port}`);
+    await app.listen(process.env.PORT ?? 3000, '0.0.0.0');
   } catch (error) {
     console.error('Failed to start application:', error);
     process.exit(1);
